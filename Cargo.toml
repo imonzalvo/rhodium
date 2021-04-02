@@ -1,0 +1,31 @@
+[package]
+name = "rhodium"
+version = "1.0.0"
+authors = ["Ignacio Carlos Monzalvo Milan", "Juan Pablo Martínez Delbugio"]
+edition = "2018"
+description = "Hyper wrapper"
+documentation = "https://docs.rs/rhodium"
+readme = "README.md"
+homepage = "https://github.com/imonzalvo/rhodium"
+repository = "https://github.com/imonzalvo/rhodium"
+license = "MIT OR Apache-2.0"
+keywords = ["web-programming", "server", "proxy", "waf"]
+categories = ["web-programming"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures-util = "0.3.4"
+async-trait = "0.1.30"
+
+log = "0.4"
+simplelog = "0.7.5"
+
+hyper = { version = "0.14.4", features = ["server", "http1", "http2", "tcp", "client"] }
+tokio = { version = "1.3", features = [ "full" ] }
+tokio-rustls = "0.22.0"
+tokio-stream = { version = "0.1.4",  features = [ "net" ]}
+
+[dev-dependencies]
+hyper-tls = "0.5.0"
+native-tls = "0.2.4"
